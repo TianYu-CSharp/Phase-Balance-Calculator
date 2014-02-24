@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML>
+<html manifest="OfflineApp.appcache">
+<head>
+<meta charset="utf-8">
+<title>Phase Balance Calculator</title>
+<meta name="generator" content="NSB/AppStudio 3.3.0.1$qpmw" />
+<meta name="date" content="2014-02-23 22:34:18.425000" />
+<meta name="version" content="1.0.0" />
+<meta name="viewport" content="width=device-width minimum-scale=1.0, maximum-scale=0.6667, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="YES" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Phase Balance Calculator">
+<meta name="copyright" content="Copyright 2014 My Software" />
+<link rel="apple-touch-icon" href="icon.png" />
+<link rel="apple-touch-startup-image" href="nsb/images/SplashScreen.png" />
+<link rel="shortcut icon" sizes="196x196" href="nsb/images/196.png"/>
+<script src="nsb/hfunc.js"></script>
+<script src="nsb/messages.js"></script>
+<link href="nsb/nsbstyle.css" rel="stylesheet">
+<script src="nsb/fastclick.js"></script>
+<script src="nsb/jquery.js"></script>
+<script src="nsb/jquery.mobile.js"></script>
+<link href="nsb/jquery.mobile.css" rel="stylesheet">
+
+
+
+<style type="text/css">
+#lblLine1to2 {position:absolute; left:20%; right:auto; top:30%; bottom:auto; height:auto; width:auto}
+#TextBox1 { text-align: center; font-size: 28px; font-family: helvetica; font-style: normal; font-weight: normal; color: black;  padding: 0px; margin: -1px;  height: 100%;  }
+#TextBox1_wrapper > div { position: absolute; width: 20%; left: 60%; right:auto; top: 30%; margin: 0 -0.4em; height: auto;  }
+#lblLine2to3 {position:absolute; left:20%; right:auto; top:50%; bottom:auto; height:auto; width:auto}
+#TextBox2 { text-align: center; font-size: 28px; font-family: helvetica; font-style: normal; font-weight: normal; color: black;  padding: 0px; margin: -1px;  height: 100%;  }
+#TextBox2_wrapper > div { position: absolute; width: 20%; left: 60%; right:auto; top: 50%; margin: 0 -0.4em; height: auot;  }
+#lblLine1to3 {position:absolute; left:20%; right:auto; top:70%; bottom:auto; height:auto; width:auto}
+#TextBox3 { text-align: center; font-size: 28px; font-family: helvetica; font-style: normal; font-weight: normal; color: black;  padding: 0px; margin: -1px;  height: 100%;  }
+#TextBox3_wrapper > div { position: absolute; width: 20%; left: 60%; right:auto; top: 70%; margin: 0 -0.4em; height: auto;  }
+#Button1 {position:absolute; left:5%; right:auto; top:90%; bottom:auto; height:auto; width:90%}
+#Label1 {position:absolute; left:5%; right:auto; top:5%; bottom:auto; height:auto; width:90%}
+body * {font-family:helvetica}
+</style>
+</head>
+<body style="margin:0px;">
+<script>window.addEventListener('load', function() {new FastClick(document.body)}, false)</script>
+<div data-role="page" id="Page_PhaseBalanceCalculator" data-theme="c" style="">
+<form id="Form1" action="" method="GET" onsubmit="return false;" style="display:none; height:100%; position:absolute; background:black; top:0px; left:0px; width:100%; ">
+<script>
+Form1.innerHTML=[  "<label id='lblLine1to2' class='graytitle' style='text-align:center;  font-size:30px; font-family:helvetica; font-style:normal; font-weight:bold; color:white; background-color:transparent; border-style:;border-color:transparent;border-width:1px; ' >L1-L2</label>",
+  "<div id='TextBox1_wrapper'><input id='TextBox1' type='number' data-theme='c' name='' autocorrect='on' autocomplete='on' autocapitalize='on' maxlength='3' value='' placeholder='Volts' data-mini='false' data-nsb-type='TextBox_jqm' class=' ' /></div>",
+  "<label id='lblLine2to3' class='graytitle' style='text-align:center;  font-size:30px; font-family:helvetica; font-style:normal; font-weight:bold; color:white; background-color:transparent; border-style:;border-color:transparent;border-width:1px; ' >L2-L3</label>",
+  "<div id='TextBox2_wrapper'><input id='TextBox2' type='number' data-theme='c' name='' autocorrect='on' autocomplete='on' autocapitalize='on' maxlength='3' value='' placeholder='Volts' data-mini='false' data-nsb-type='TextBox_jqm' class=' ' /></div>",
+  "<label id='lblLine1to3' class='graytitle' style='text-align:center;  font-size:30px; font-family:helvetica; font-style:normal; font-weight:bold; color:white; background-color:transparent; border-style:;border-color:transparent;border-width:1px; ' >L1-L3</label>",
+  "<div id='TextBox3_wrapper'><input id='TextBox3' type='number' data-theme='c' name='' autocorrect='on' autocomplete='on' autocapitalize='on' maxlength='3' value='' placeholder='Volts' data-mini='false' data-nsb-type='TextBox_jqm' class=' ' /></div>",
+  "<div id='Button1' data-role='button' data-inline=true data-theme=c data-icon=false data-iconpos=none data-mini=false data-corners='true' class=' ' style='margin:0px; overflow:visible; font-size:30px; font-family:helvetica; font-style:normal; font-weight:bold; color:; background-color:; '>Calculate Phase Balance</div>",
+  "<label id='Label1' class='graytitle' style='text-align:center;  font-size:30px; font-family:helvetica; font-style:normal; font-weight:bold; color:white; background-color:transparent; border-style:;border-color:transparent;border-width:1px; ' >Phase Blance\u000D\u000ACalculator</label>",
+  ].join('');
+</script>
+</form>
+</div>
+<script>(function(){var all=document.getElementsByTagName('*');for(var i=0;i<all.length;i++)if(typeof all[i].id!='undefined'&&typeof window[all[i].id]=='undefined')window[all[i].id]=all[i];})()
+browserWarningMessage('Please use Google Chrome, Apple Safari or another supported browser.');if(navigator.userAgent.indexOf('iPad')!==-1){var splashscreen=document.createElement('link');splashscreen.rel='apple-touch-startup-image';splashscreen.href='';document.getElementsByTagName('head')[0].appendChild(splashscreen);}
+window.addEventListener('load',function(){Form1.style.display='block';lblLine1to2.style.lineHeight='auto';NSB.addProperties(lblLine1to2);if(typeof TextBox1==='undefined')TextBox1=document.getElementById('TextBox1')
+TextBox1.addEventListener('touchmove',function(e){e.stopPropagation();},false);NSB.addProperties(TextBox1,$('#TextBox1_wrapper > div')[0]);NSB.addDisableProperty(TextBox1)
+lblLine2to3.style.lineHeight='auto';NSB.addProperties(lblLine2to3);if(typeof TextBox2==='undefined')TextBox2=document.getElementById('TextBox2')
+TextBox2.addEventListener('touchmove',function(e){e.stopPropagation();},false);NSB.addProperties(TextBox2,$('#TextBox2_wrapper > div')[0]);NSB.addDisableProperty(TextBox2)
+lblLine1to3.style.lineHeight='auto';NSB.addProperties(lblLine1to3);if(typeof TextBox3==='undefined')TextBox3=document.getElementById('TextBox3')
+TextBox3.addEventListener('touchmove',function(e){e.stopPropagation();},false);NSB.addProperties(TextBox3,$('#TextBox3_wrapper > div')[0]);NSB.addDisableProperty(TextBox3)
+NSB.addDisableProperty(Button1);NSB.addProperties(Button1);NSB.addProperties(Label1);Form1.style.display='none';},false);Form1.onsubmit=function(event){window.event.stopPropagation();window.event.preventDefault()};NSB.addProperties(Form1);var Line1;var Line2;var Line3;var AverageVoltage;var Line1Deviation;var Line2Deviation;var Line3Deviation;var VoltageImbalance;var TotalVoltage;var AverageVoltage;var MaxDeviation;var result;function Calculate(){TotalVoltage=Math.floor(Line1)+Math.floor(Line2)+Math.floor(Line3);AverageVoltage=Round(TotalVoltage/3,2);Line1Deviation=Round(Math.abs(AverageVoltage-Line1),1);Line2Deviation=Round(Math.abs(AverageVoltage-Line2),1);Line3Deviation=Round(Math.abs(AverageVoltage-Line3),1);MaxDeviation=Line1Deviation;if(Line2Deviation>MaxDeviation){MaxDeviation=Line2Deviation;}
+if(Line3Deviation>MaxDeviation){MaxDeviation=Line3Deviation;}
+VoltageImbalance=(Round(MaxDeviation,1)/Round(AverageVoltage,1))*100;VoltageImbalance=Round(VoltageImbalance,2);}
+function BuildEmailBody(){result="L1-L2="+Line1+"v"+'\n';result=result+"L2-L3="+Line2+"v"+'\n';result=result+"L1-L3="+Line3+"v"+'\n';result=result+"Total Voltage = "+TotalVoltage+"v"+'\n';result=result+"Average Voltage = "+TotalVoltage+"v divide by 3 = "+Round(AverageVoltage,1)+"v"+'\n';result=result+'\n';result=result+Line1+"v - "+AverageVoltage+"v = "+Line1Deviation+"v"+'\n';result=result+Line2+"v - "+AverageVoltage+"v = "+Line2Deviation+"v"+'\n';result=result+Line3+"v - "+AverageVoltage+"v = "+Line3Deviation+"v"+'\n';result=result+'\n';result=result+"Max Deviation is "+MaxDeviation+"v"+'\n';result=result+"Voltage Imbalance = "+MaxDeviation+"v divide by "+AverageVoltage+"v times 100 = "+VoltageImbalance+"%"+'\n';}
+function custDone(result1){if(result1=="EMAIL"){BuildEmailBody();location=encodeURI("mailto:"+encodeURI("")+encodeURI("?subject=Phase Balance")+"&body="+encodeURI(result));}}
+Button1.onclick=function(){savethefunction_rvar="";debugger;Calculate();result="Average voltage is "+Round(AverageVoltage,2)+" with a ";result=result+"maximum deviation of "+Round(MaxDeviation,2)+" volts.";if(VoltageImbalance<2){result=result+" The voltage balance is "+VoltageImbalance+"%. You are within the allowed tolerances.";}else{result=result+" The voltage balance is "+VoltageImbalance+"%. You have a voltage imbalance and need to contact your service manager to correct the issue.";}
+NSB.MsgBox(custDone,result,"EMAIL,OK","Phase Balance");return savethefunction_rvar;}
+TextBox1.onblur=function(){savethefunction_rvar="";Line1=TextBox1.value;return savethefunction_rvar;}
+TextBox2.onblur=function(){savethefunction_rvar="";Line2=TextBox2.value;return savethefunction_rvar;}
+TextBox3.onblur=function(){savethefunction_rvar="";Line3=TextBox3.value;return savethefunction_rvar;}
+window.addEventListener('load',function(){Form1.style.display='block';Main();if(typeof(Form1.onshow)=='function')Form1.onshow();},false);var NSBCurrentForm=Form1;window.onorientationchange=function(){savethefunction_rvar="";return savethefunction_rvar;}</script>
+
+</body>
+</html>
